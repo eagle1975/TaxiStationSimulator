@@ -1,6 +1,6 @@
 
 public class Car {
-	
+
 	private int id;
 	private String marka;
 	private String model;
@@ -8,7 +8,7 @@ public class Car {
 	private String color;
 	private int price;
 	private int registrationNumber;
-	
+
 	public Car(int id, String marka, String model, int productionYear, String color, int price, int registrationNumber) {
 		this.id = id;
 		this.marka = marka;
@@ -74,12 +74,13 @@ public class Car {
 	public void setRegistrationNumber(int registrationNumber) {
 		this.registrationNumber = registrationNumber;
 	}
-	
+
 	public String toString() {
 		return "Car [ id = " + id + ", marka = " + marka + ", model = " + model + ", productionYear = " + productionYear +
 				", color = " + color + ", price = " + price + ", registrationNumber = " + registrationNumber + " ]";
 	}
-	
-	
+
+
 
 }
+
