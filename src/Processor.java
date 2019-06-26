@@ -13,8 +13,9 @@ class Processor {
 
 	public void findeCarByMark(Car[] cars, String marka) {
 		for(Car car : cars) {
-			if(marka.equals(car.getMarka()))
+			if(marka.equals(car.getMarka())) {
 				printCar(car);
+			}	
 		}
 	}
 
@@ -26,8 +27,9 @@ class Processor {
 
 	public void findeCarByMarkAndYear(Car[] cars, String marka, int year) {
 		for (Car car : cars) {
-			if(marka.equals(car.getMarka()) && (year <= (2018 - car.getProductionYear())))
+			if(marka.equals(car.getMarka()) && (year <= (2018 - car.getProductionYear()))) {
 				printCar(car);
+			}	
 		}
 	}
 
@@ -39,8 +41,9 @@ class Processor {
 
 	void findeCarByYearAndPrice(Car[] cars, int year, int price) {
 		for (Car car : cars) {
-			if ((year == car.getProductionYear()) && (price < car.getPrice()))
+			if ((year == car.getProductionYear()) && (price < car.getPrice())) {
 				printCar(car);
+			}	
 		}
 	}
 
