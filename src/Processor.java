@@ -2,40 +2,44 @@
 class Processor {
 
 	private Car[] carProc;
+	private CarModel carModel;
 
 	public Processor() {
-
+		Car[] car = new Car[0];
+		carProc = car;
 	}
 
 	public Processor(Car[] car) {
 		this.carProc = car;
 	}
 
-	public void findeCarByMark(Car[] cars, String marka) {
+	public void findeCarByModel(Car[] cars, String model) {
 		for(Car car : cars) {
-			if(marka.equals(car.getMarka())) {
+			carModel = car.getModel();
+			if(model.equals(carModel.model)) {
 				printCar(car);
 			}	
 		}
 	}
 
-	public void findeCarByMark(String marka) {
+	public void findeCarByModel(String model) {
 		if (getCarProc() != null) {
-			findeCarByMark(getCarProc(), marka);
+			findeCarByModel(getCarProc(), model);
 		}
 	}
 
-	public void findeCarByMarkAndYear(Car[] cars, String marka, int year) {
+	public void findeCarByModelAndYear(Car[] cars, String model, int year) {
 		for (Car car : cars) {
-			if(marka.equals(car.getMarka()) && (year <= (2018 - car.getProductionYear()))) {
+			carModel = car.getModel();
+			if((model.equals(carModel.model)) && (year <= (2019 - car.getProductionYear()))) {
 				printCar(car);
 			}	
 		}
 	}
 
-	public void findeCarByMarkAndYear(String marka, int year) {
+	public void findeCarByModelAndYear(String model, int year) {
 		if (getCarProc() != null) {
-			findeCarByMarkAndYear(getCarProc(), marka, year);
+			findeCarByModelAndYear(getCarProc(), model, year);
 		}
 	}
 
