@@ -13,37 +13,33 @@ class Processor {
 		this.carProc = car;
 	}
 
-	public void findeCarByModel(Car[] cars, String model) {
+	public void findCarByModel(Car[] cars, String model) {
 		for(Car car : cars) {
 			carModel = car.getModel();
-			if(model.equals(carModel.model)) {
+			if(model.equalsIgnoreCase(carModel.model)) {
 				printCar(car);
 			}	
 		}
 	}
 
-	public void findeCarByModel(String model) {
-		if (getCarProc() != null) {
-			findeCarByModel(getCarProc(), model);
-		}
+	public void findCarByModel(String model) {
+		findCarByModel(getCarProc(), model);
 	}
 
-	public void findeCarByModelAndYear(Car[] cars, String model, int year) {
+	public void findCarByModelAndYear(Car[] cars, String model, int year) {
 		for (Car car : cars) {
 			carModel = car.getModel();
-			if((model.equals(carModel.model)) && (year <= (2019 - car.getProductionYear()))) {
+			if((model.equalsIgnoreCase(carModel.model)) && (year <= (2019 - car.getProductionYear()))) {
 				printCar(car);
 			}	
 		}
 	}
 
-	public void findeCarByModelAndYear(String model, int year) {
-		if (getCarProc() != null) {
-			findeCarByModelAndYear(getCarProc(), model, year);
-		}
+	public void findCarByModelAndYear(String model, int year) {
+		findCarByModelAndYear(getCarProc(), model, year);
 	}
 
-	void findeCarByYearAndPrice(Car[] cars, int year, int price) {
+	void findCarByYearAndPrice(Car[] cars, int year, int price) {
 		for (Car car : cars) {
 			if ((year == car.getProductionYear()) && (price < car.getPrice())) {
 				printCar(car);
@@ -51,9 +47,9 @@ class Processor {
 		}
 	}
 
-	void findeCarByYearAndPrice(int year, int price) {
+	void findCarByYearAndPrice(int year, int price) {
 		if (getCarProc() != null) {
-			findeCarByYearAndPrice(getCarProc(), year, price);
+			findCarByYearAndPrice(getCarProc(), year, price);
 		}
 	}
 

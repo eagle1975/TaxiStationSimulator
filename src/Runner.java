@@ -29,21 +29,21 @@ public class Runner {
 		Processor filledProc = new Processor(cars);
 
 		System.out.println(BRAND_EMPTY);
-		emptyProc.findeCarByModel("BMW");
+		emptyProc.findCarByModel("BMW");
 		System.out.println(BRAND_FILLED);
-		filledProc.findeCarByModel("BMW");
+		filledProc.findCarByModel("BMW");
 		System.out.println();
 
 		System.out.println(BRAND_OPERATION_EMPTY);
-		emptyProc.findeCarByModelAndYear("OPEL", 5);
+		emptyProc.findCarByModelAndYear("OPEL", 5);
 		System.out.println(BRAND_OPERATION_FILLED);
-		filledProc.findeCarByModelAndYear("OPEL", 5);
+		filledProc.findCarByModelAndYear("OPEL", 5);
 		System.out.println();
 
 		System.out.println(YEAR_PRICE_EMPTY);
-		emptyProc.findeCarByYearAndPrice(2009, 12000);
+		emptyProc.findCarByYearAndPrice(2009, 12000);
 		System.out.println(YEAR_PRICE_FILLED);
-		filledProc.findeCarByYearAndPrice(2009, 12000);
+		filledProc.findCarByYearAndPrice(2009, 12000);
 	}
 	
 

@@ -1,11 +1,11 @@
 
 public enum CarModel {
-	ZAZ("ZAZ"),
-	OPEL("OPEL"),
-	BMW("BMW"),
-	CHEVROLET("CHEVROLET"),
-	SCODA("SCODA"),
-	MERSEDES("MERSEDES");
+	ZAZ("Zaz"),
+	OPEL("Opel"),
+	BMW("Bmw"),
+	CHEVROLET("Chevrolet"),
+	SCODA("Scoda"),
+	MERSEDES("Mersedes");
 	
 	String model;
 	
