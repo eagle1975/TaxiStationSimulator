@@ -1,3 +1,7 @@
 .settings/
 .classpath
 .project
+.idea
+.metadata
+.class
+/bin

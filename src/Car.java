@@ -1,18 +1,19 @@
 
+
 public class Car {
-	
+
 	private int id;
-	private String marka;
-	private String model;
+	private CarModel carModel;
+	private String type;
 	private int productionYear;
 	private String color;
 	private int price;
 	private int registrationNumber;
-	
-	public Car(int id, String marka, String model, int productionYear, String color, int price, int registrationNumber) {
+
+	public Car(int id, CarModel model, String type, int productionYear, String color, int price, int registrationNumber) {
 		this.id = id;
-		this.marka = marka;
-		this.model = model;
+		this.carModel = model;
+		this.type = type;
 		this.productionYear = productionYear;
 		this.color = color;
 		this.price = price;
@@ -27,20 +28,20 @@ public class Car {
 		this.id = id;
 	}
 
-	public String getMarka() {
-		return marka;
+	public  CarModel getModel() {
+		return carModel;
 	}
 
-	public void setMarka(String marka) {
-		this.marka = marka;
+	public void setModel(CarModel model) {
+		this.carModel = model;
 	}
 
-	public String getModel() {
-		return model;
+	public String getType() {
+		return type;
 	}
 
-	public void setModel(String model) {
-		this.model = model;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public int getProductionYear() {
@@ -74,12 +75,13 @@ public class Car {
 	public void setRegistrationNumber(int registrationNumber) {
 		this.registrationNumber = registrationNumber;
 	}
-	
+
 	public String toString() {
-		return "Car [ id = " + id + ", marka = " + marka + ", model = " + model + ", productionYear = " + productionYear +
+		return "Car [ id = " + id + ", model = " + carModel + ", type = " + type + ", productionYear = " + productionYear +
 				", color = " + color + ", price = " + price + ", registrationNumber = " + registrationNumber + " ]";
 	}
-	
-	
+
+
 
 }
+
