@@ -1,3 +1,6 @@
+import entity.Car;
+import entity.CarModel;
+import service.Processor;
 
 
 public class Runner {
@@ -19,8 +22,8 @@ public class Runner {
 				new Car(7,  CarModel.BMW,       "X5",           2015, "Black", 60000,    67832987),
 				new Car(8,  CarModel.CHEVROLET, "Aveo",         2015, "White", 8000,     6787245),
 				new Car(9,  CarModel.CHEVROLET, "Aveo",         2016, "Red",   12000,    67854),
-				new Car(10, CarModel.SCODA,     "Octavia",      2016, "Orang", 18500,    78965),
-				new Car(11, CarModel.MERSEDES,  "bens",         2009, "Red",   12250,    12097),
+				new Car(10, CarModel.SCODA,     "Octavia",      2016, "Orange", 18500,    78965),
+				new Car(11, CarModel.MERCEDES,  "bens",         2009, "Red",   12250,    12097),
 				new Car(12, CarModel.OPEL,      "Vectra",       1984, "blu",   7365,     1111),
 				new Car(13, CarModel.OPEL,      "Vectra",       2009, "Red",   15000,    876323),
 				new Car(14, CarModel.OPEL,      "insignia",     2009, "Blue",  20000,    778743)};
@@ -29,9 +32,9 @@ public class Runner {
 		Processor filledProc = new Processor(cars);
 
 		System.out.println(BRAND_EMPTY);
-		emptyProc.findCarByModel("BMW");
+		System.out.println(emptyProc.findCarByModel("Bmw"));
 		System.out.println(BRAND_FILLED);
-		filledProc.findCarByModel("BMW");
+		filledProc.findCarByModel("Bmw");
 		System.out.println();
 
 		System.out.println(BRAND_OPERATION_EMPTY);
