@@ -6,7 +6,11 @@ public enum CarModel {
 	BMW("Bmw"),
 	CHEVROLET("Chevrolet"),
 	SCODA("Scoda"),
-	MERCEDES("Mersedes");
+	MERCEDES("Mersedes"),
+	RENAULT("Renault"),
+	IVECO("Iveco"),
+	LAZ("Laz"),
+	SCANIA("Scania");
 
 	private String model;
 	

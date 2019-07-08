@@ -1,39 +1,39 @@
 package service;
 
-import entity.Car;
+import entity.*;
 
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 
-public class Processor {
+public class Processor implements  IProcessor{
 
-    private Car[] cars;
+    private ICar[] cars;
 
     public Processor() {
-        cars = new Car[0];
+        cars = new ICar[0];
     }
 
-    public Processor(Car[] cars) {
+    public Processor(ICar[] cars) {
         this.cars = Optional.of(cars)
                 .orElseThrow(() -> new IllegalArgumentException("Car must be not null!"));
     }
 
-    public Car findCarByModel(Car[] cars, String model) {
-       return Arrays.stream(cars)
+    public ICar findCarByModel(ICar[] cars, String model) {
+        return Arrays.stream(cars)
                 .filter(car -> car.getCarModel().name().equalsIgnoreCase(model))
                 .findFirst()
                 .orElseThrow(NoSuchElementException::new);
     }
 
-    public Car findCarByModel(String model) {
-         return findCarByModel(cars, model);
-      }
+    public ICar findCarByModel(String model) {
+        return findCarByModel(cars, model);
+    }
 
-    public void findCarByModelAndYear(Car[] cars, String model, int year) {
+    public void findCarByModelAndYear(ICar[] cars, String model, int year) {
         Arrays.stream(cars)
-                .filter(car -> car.getCarModel().getModel().equals(model))
-                .filter(car -> car.getProductionYear() == year)
+                .filter(car -> car.getCarModel().getModel().equalsIgnoreCase(model))
+                .filter(car -> (2019 - car.getProductionYear()) > year)
                 .forEach(this::printCar);
     }
 
@@ -41,7 +41,7 @@ public class Processor {
         findCarByModelAndYear(cars, model, year);
     }
 
-    void findCarByYearAndPrice(Car[] cars, int year, int price) {
+    public void findCarByYearAndPrice(ICar[] cars, int year, int price) {
         Arrays.stream(cars)
                 .filter(car -> car.getProductionYear() == year)
                 .filter(car -> car.getPrice() > price)
@@ -52,15 +52,15 @@ public class Processor {
         findCarByYearAndPrice(cars, year, price);
     }
 
-    void printCar(Car car) {
+    void printCar(ICar car) {
         System.out.println(car);
     }
 
-    void printCar(Car[] cars) {
+    void printCar(ICar[] cars) {
         Arrays.stream(cars).forEach(System.out::println);
     }
 
-    public Car[] getCars() {
+    public ICar[] getCars() {
         return cars;
     }
 }
