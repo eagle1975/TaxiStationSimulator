@@ -1,13 +1,15 @@
 package entity;
 
+import entity.EnumCar.CarModel;
+import entity.EnumCar.TypeCar;
+
 public class Bus extends PassangerImpl {
 
     private String purpose;
 
 
-    public Bus(int id, CarModel model, String type, int productionYear, String color, int price, int registrationNumber, int numberOfPassengers, String purpose) {
+    public Bus(int id, CarModel model, TypeCar type, int productionYear, String color, int price, int registrationNumber, int numberOfPassengers, String purpose) {
         super(id, model, type, productionYear, color, price, registrationNumber, numberOfPassengers);
-
         this.purpose = purpose;
     }
 
@@ -23,7 +25,6 @@ public class Bus extends PassangerImpl {
     public String toString() {
         return "Bus{" +
                 "id=" + getId() +
-
                 ", carModel=" + getCarModel() +
                 ", type='" + getType() + '\'' +
                 ", productionYear=" + getProductionYear() +
@@ -35,4 +36,8 @@ public class Bus extends PassangerImpl {
                 '}';
     }
 }
+
+
+
+
 

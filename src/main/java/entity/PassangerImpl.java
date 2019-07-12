@@ -1,18 +1,21 @@
 
 package entity;
 
-    public class PassangerImpl implements ICar{
+import entity.EnumCar.CarModel;
+import entity.EnumCar.TypeCar;
+
+public class PassangerImpl implements Car {
 
         private int id;
         private CarModel carModel;
-        private String type;
+        private TypeCar type;
         private int productionYear;
         private String color;
         private int price;
         private int registrationNumber;
         private int numberOfPassengers;
 
-        public PassangerImpl(int id, CarModel model, String type, int productionYear, String color, int price, int registrationNumber, int numberOfPassengers) {
+        public PassangerImpl(int id, CarModel model, TypeCar type, int productionYear, String color, int price, int registrationNumber, int numberOfPassengers) {
             this.id = id;
             this.carModel = model;
             this.type = type;
@@ -39,11 +42,11 @@ package entity;
             this.carModel = carModel;
         }
 
-        public String getType() {
+        public TypeCar getType() {
             return type;
         }
 
-        public void setType(String type) {
+        public void setType(TypeCar type) {
             this.type = type;
         }
 

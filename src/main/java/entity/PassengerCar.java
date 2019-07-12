@@ -1,10 +1,13 @@
 package entity;
 
+import entity.EnumCar.CarModel;
+import entity.EnumCar.TypeCar;
+
 public class PassengerCar extends PassangerImpl {
 
     private String body;
 
-    public PassengerCar(int id, CarModel model, String type, int productionYear, String color, int price, int registrationNumber, int numberOfPassengers, String body) {
+    public PassengerCar(int id, CarModel model, TypeCar type, int productionYear, String color, int price, int registrationNumber, int numberOfPassengers, String body) {
         super(id, model, type, productionYear, color, price, registrationNumber, numberOfPassengers);
 
         this.body = body;

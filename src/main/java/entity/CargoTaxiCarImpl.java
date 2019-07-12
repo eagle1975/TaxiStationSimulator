@@ -1,17 +1,20 @@
 package entity;
 
-public class CargoTaxiImpl implements ICar {
+import entity.EnumCar.CarModel;
+import entity.EnumCar.TypeCar;
+
+public class CargoTaxiCarImpl implements Car {
 
     private int id;
     private CarModel carModel;
-    private String type;
+    private TypeCar type;
     private int productionYear;
     private String color;
     private int price;
     private int registrationNumber;
     private int loadCapacity;
 
-    public CargoTaxiImpl(int id, CarModel carModel, String type, int productionYear, String color, int price, int registrationNumber, int loadCapacity) {
+    public CargoTaxiCarImpl(int id, CarModel carModel, TypeCar type, int productionYear, String color, int price, int registrationNumber, int loadCapacity) {
         this.id = id;
         this.carModel = carModel;
         this.type = type;
@@ -38,11 +41,11 @@ public class CargoTaxiImpl implements ICar {
         this.carModel = carModel;
     }
 
-    public String getType() {
+    public TypeCar getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(TypeCar type) {
         this.type = type;
     }
 

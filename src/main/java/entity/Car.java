@@ -1,6 +1,8 @@
 package entity;
 
-public interface ICar {
+import entity.EnumCar.CarModel;
+
+public interface Car {
 
     int getPrice();
 

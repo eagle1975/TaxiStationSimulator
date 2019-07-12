@@ -1,4 +1,4 @@
-package entity;
+package entity.EnumCar;
 
 public enum CarModel {
 	ZAZ("Zaz"),
@@ -6,7 +6,7 @@ public enum CarModel {
 	BMW("Bmw"),
 	CHEVROLET("Chevrolet"),
 	SCODA("Scoda"),
-	MERCEDES("Mersedes"),
+	MERCEDES("Merсedes"),
 	RENAULT("Renault"),
 	IVECO("Iveco"),
 	LAZ("Laz"),
