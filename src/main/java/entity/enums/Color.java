@@ -1,6 +1,6 @@
-package entity.EnumCar;
+package entity.enums;
 
-public enum ColorCar {
+public enum Color {
     GREEN,
     BLUE,
     YELLOW,

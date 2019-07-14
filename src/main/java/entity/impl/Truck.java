@@ -1,22 +1,22 @@
-package entity;
+package entity.impl;
 
-import entity.EnumCar.CarModel;
-import entity.EnumCar.TypeCar;
+import entity.Car;
+import entity.enums.Color;
+import entity.enums.Model;
 
-public class CargoTaxiCarImpl implements Car {
-
-    private int id;
-    private CarModel carModel;
-    private TypeCar type;
+public class Truck implements Car {
+    private static int nextId;
+    private int id = ++nextId;
+    private Model model;
+    private String type;
     private int productionYear;
-    private String color;
+    private Color color;
     private int price;
     private int registrationNumber;
     private int loadCapacity;
 
-    public CargoTaxiCarImpl(int id, CarModel carModel, TypeCar type, int productionYear, String color, int price, int registrationNumber, int loadCapacity) {
-        this.id = id;
-        this.carModel = carModel;
+    public Truck(Model model, String type, int productionYear, Color color, int price, int registrationNumber, int loadCapacity) {
+        this.model = model;
         this.type = type;
         this.productionYear = productionYear;
         this.color = color;
@@ -33,22 +33,24 @@ public class CargoTaxiCarImpl implements Car {
         this.id = id;
     }
 
-    public CarModel getCarModel() {
-        return carModel;
+    @Override
+    public Model getModel() {
+        return model;
     }
 
-    public void setCarModel(CarModel carModel) {
-        this.carModel = carModel;
+    public void setModel(Model model) {
+        this.model = model;
     }
 
-    public TypeCar getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(TypeCar type) {
+    public void setType(String type) {
         this.type = type;
     }
 
+    @Override
     public int getProductionYear() {
         return productionYear;
     }
@@ -57,11 +59,11 @@ public class CargoTaxiCarImpl implements Car {
         this.productionYear = productionYear;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
     }
 
@@ -95,7 +97,7 @@ public class CargoTaxiCarImpl implements Car {
     public String toString() {
         return "CargoTaxiImpl{" +
                 "id=" + id +
-                ", carModel=" + carModel +
+                ", model=" + model +
                 ", type='" + type + '\'' +
                 ", productionYear=" + productionYear +
                 ", color='" + color + '\'' +

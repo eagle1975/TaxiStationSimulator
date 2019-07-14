@@ -1,6 +1,6 @@
 package entity;
 
-import entity.EnumCar.CarModel;
+import entity.enums.Model;
 
 public interface Car {
 
@@ -8,7 +8,7 @@ public interface Car {
 
     void setPrice(int price);
 
-    CarModel getCarModel();
+    Model getModel();
 
     int getProductionYear();
 }

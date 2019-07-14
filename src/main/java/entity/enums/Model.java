@@ -1,11 +1,11 @@
-package entity.EnumCar;
+package entity.enums;
 
-public enum CarModel {
+public enum Model {
 	ZAZ("Zaz"),
 	OPEL("Opel"),
 	BMW("Bmw"),
 	CHEVROLET("Chevrolet"),
-	SCODA("Scoda"),
+	SKODA("Skoda"),
 	MERCEDES("Merсedes"),
 	RENAULT("Renault"),
 	IVECO("Iveco"),
@@ -14,7 +14,7 @@ public enum CarModel {
 
 	private String model;
 	
-	CarModel(String model) {
+	Model(String model) {
 		this.model = model;
 	}
 

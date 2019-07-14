@@ -1,6 +1,7 @@
-package service;
+package service.impl;
 
-import entity.*;
+import entity.Car;
+import service.Processor;
 
 import java.util.Arrays;
 import java.util.NoSuchElementException;
@@ -21,7 +22,7 @@ public class ProcessorImpl implements Processor {
 
     public Car findCarByModel(Car[] cars, String model) {
         return Arrays.stream(cars)
-                .filter(car -> car.getCarModel().name().equalsIgnoreCase(model))
+                .filter(car -> car.getModel().name().equalsIgnoreCase(model))
                 .findFirst()
                 .orElseThrow(NoSuchElementException::new);
     }
@@ -32,7 +33,7 @@ public class ProcessorImpl implements Processor {
 
     public void findCarByModelAndYear(Car[] cars, String model, int year) {
         Arrays.stream(cars)
-                .filter(car -> car.getCarModel().getModel().equalsIgnoreCase(model))
+                .filter(car -> car.getModel().getModel().equalsIgnoreCase(model))
                 .filter(car -> (2019 - car.getProductionYear()) > year)
                 .forEach(this::printCar);
     }
