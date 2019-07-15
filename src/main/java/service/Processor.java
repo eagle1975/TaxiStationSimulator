@@ -8,7 +8,7 @@ public interface Processor {
 
     Car findCarByModel(String model);
 
-    void findCarByModelAndYear(String model, int year);
+    Car[] findCarByModelAndYear(String model, int year);
 
     void findCarByYearAndPrice(Car[] cars, int year, int price);
 

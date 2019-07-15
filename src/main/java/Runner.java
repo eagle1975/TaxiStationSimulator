@@ -4,6 +4,8 @@ import entity.impl.PassengerCar;
 import entity.impl.Truck;
 import service.impl.ProcessorImpl;
 
+import java.util.Arrays;
+
 import static entity.enums.Color.*;
 import static entity.enums.Model.*;
 
@@ -43,14 +45,11 @@ public class Runner {
         System.out.println(BRAND_EMPTY);
         //System.out.println(emptyProc.findCarByModel("Bmw"));
         System.out.println(BRAND_FILLED);
-        filledProc.findCarByModel("Bmw");
-        System.out.println();
+
+        System.out.println(filledProc.findCarByModel("Bmw"));
 
         System.out.println(BRAND_OPERATION_EMPTY);
-        emptyProc.findCarByModelAndYear("OPEL", 5);
-        System.out.println(BRAND_OPERATION_FILLED);
-        filledProc.findCarByModelAndYear("OPEL", 5);
-        System.out.println();
+        Arrays.stream(emptyProc.findCarByModelAndYear("OPEL", 5)).forEach(System.out::println);
 
         System.out.println(YEAR_PRICE_EMPTY);
         emptyProc.findCarByYearAndPrice(2009, 12000);

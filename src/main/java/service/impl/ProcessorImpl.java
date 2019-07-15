@@ -20,6 +20,7 @@ public class ProcessorImpl implements Processor {
                 .orElseThrow(() -> new IllegalArgumentException("Car must be not null!"));
     }
 
+    @Override
     public Car findCarByModel(Car[] cars, String model) {
         return Arrays.stream(cars)
                 .filter(car -> car.getModel().name().equalsIgnoreCase(model))
@@ -27,21 +28,24 @@ public class ProcessorImpl implements Processor {
                 .orElseThrow(NoSuchElementException::new);
     }
 
+    @Override
     public Car findCarByModel(String model) {
         return findCarByModel(cars, model);
     }
 
-    public void findCarByModelAndYear(Car[] cars, String model, int year) {
-        Arrays.stream(cars)
+    public Car[] findCarByModelAndYear(Car[] cars, String model, int year) {
+        return  Arrays.stream(cars)
                 .filter(car -> car.getModel().getModel().equalsIgnoreCase(model))
-                .filter(car -> (2019 - car.getProductionYear()) > year)
-                .forEach(this::printCar);
+                .filter(car -> car.getProductionYear() == year)
+                .toArray(Car[]::new);
     }
 
-    public void findCarByModelAndYear(String model, int year) {
-        findCarByModelAndYear(cars, model, year);
+    @Override
+    public Car[] findCarByModelAndYear(String model, int year) {
+        return findCarByModelAndYear(cars, model, year);
     }
 
+    @Override
     public void findCarByYearAndPrice(Car[] cars, int year, int price) {
         Arrays.stream(cars)
                 .filter(car -> car.getProductionYear() == year)
